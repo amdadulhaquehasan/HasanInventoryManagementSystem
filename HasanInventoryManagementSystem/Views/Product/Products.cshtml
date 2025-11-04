@@ -4,6 +4,11 @@
 
 <p>Here are all the products in the inventory.</p>
 
+<br />
+<a asp-controller="Product" asp-action="Create" class="btn btn-success">Add Product</a>
+<br />
+<br />
+
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -23,7 +28,9 @@
             <td>@product.Price.ToString("C")</td>
             <td>@product.ProductCategory</td>
             <td>
-                <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Edit" asp-route-productId="@product.ProductId">Edit</a>
+                <a class="nav-link btn btn-success text-light" asp-area="" asp-controller="Product" asp-action="Edit" asp-route-productId="@product.ProductId">Edit</a>
+                <br />
+                <a class="nav-link btn btn-success text-light" asp-area="" asp-controller="Product" asp-action="Delete" asp-route-productId="@product.ProductId">Delete</a>
             </td>
         </tr>
     }
