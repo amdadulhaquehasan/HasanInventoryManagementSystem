@@ -1,0 +1,31 @@
+﻿@model List<ProductViewModel>
+
+<h1>Products</h1>
+
+<p>Here are all the products in the inventory.</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var product in Model)
+    {
+        <tr>
+            <td>@product.ProductName</td>
+            <td>@product.ProductBrand</td>
+            <td>@product.Price.ToString("C")</td>
+            <td>@product.ProductCategory</td>
+            <td>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Edit" asp-route-productId="@product.ProductId">Edit</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
